@@ -1,2 +1,2 @@
-# Log Monitoring with Grafana-Loki-Pormtail
+# Log Monitoring with Grafana-Loki-Promtail
 
