@@ -1,2 +1,2 @@
-# Grafana-Log-Monitoring
-Log Monitoring and Visualization with Grafana , Loki and Promtail
+# Log Monitoring with Grafana-Loki-Pormtail
+
