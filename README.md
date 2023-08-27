@@ -2,7 +2,9 @@
 
 **Overview :** Grafana provides the platform for creating and visualizing dashboards, Loki serves as the log aggregation and storage backend with a unique label-based approach, and Promtail is the lightweight agent responsible for collecting and forwarding log data to Loki. Together, these tools form a powerful ecosystem for monitoring and analyzing log data in a flexible and scalable manner.
 
-<img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/1b91b724-36ef-4a6d-94e6-c44326ef1d06" alt="image" width="450" height="400" />
+<p align="center">
+  <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/1b91b724-36ef-4a6d-94e6-c44326ef1d06" alt="image" width="450" height="400" />
+</p>
 
 
 ## Install Grafana on Ubuntu
