@@ -50,6 +50,64 @@ sudo apt-get install grafana
 - `sudo apt-get update` updates the package list with the newly added repository.
 - `sudo apt-get install grafana` installs the Grafana package.
 
-Remember that these commands set up Grafana from the official Grafana repository, ensuring you're installing the latest version of Grafana.
+#### Start Grafana 
+1.  ```bash
+    sudo systemctl start grafana-server
+    ```
+
+2. Enable grafana to start automatically even if system restarts :
+
+    ```bash
+    sudo systemctl enable grafana-server
+    ```
+3.  Since Grafana works on 3000 port so open your http://Host_IP:3000
+
+   you will get the Grafana login screen
+
+   <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/9f72ffb8-0bc2-4453-ae9b-2b7a17a1f930" alt="image" width="450" height="400" />
+  
+   login with username and password both as admin
+
+## Install Loki and Promtail using Docker
+
+#### Install Docker
+
+```bash
+sudo apt-get install docker.io
+```
+
+#### Add the current user to the "docker" group 
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+Create a directory where we will save the Loki and Promtail configs
+
+```bash
+mkdir grafana_configs
+```
+
+Go inside the directory and download both config of Loki and Promtail
+
+Download Loki Config
+```bash
+wget https://raw.githubusercontent.com/grafana/loki/v2.8.0/cmd/loki/loki-local-config.yaml -O loki-config.yaml
+```
+
+Download Promtail Config
+```bash
+wget https://raw.githubusercontent.com/grafana/loki/v2.8.0/clients/cmd/promtail/promtail-docker-config.yaml -O promtail-config.yaml
+```
+
+once container is up try to access the Loki service by going to http://Host_IP:3100/ready to check if Loki is correctly configured .
+
+Once its ready we can see logs on http://Host_IP:3100/metrics
+ #### Setip DataSource on Grafana 
+ Go to Add Datasource and select Loki , then add the URL of Loki and click on add .
+
+ <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/4456fa3e-e09a-498c-b589-938eca72e2fc" alt="image" width="450" height="400" />
+
+ <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/4456fa3e-e09a-498c-b589-938eca72e2fc" alt="image" />
 
 
