@@ -195,13 +195,13 @@ Once its ready we can see logs on http://Host_IP:3100/metrics
  #### Setup DataSource on Grafana 
  Go to Add Datasource and select Loki , then add the URL of Loki and click on add .
 
- <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/4456fa3e-e09a-498c-b589-938eca72e2fc" alt="image" width="450" height="380" />
+ <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/4456fa3e-e09a-498c-b589-938eca72e2fc" alt="image" width="470" height="340" />
 
 #### Prepare Dashboard 
 
 - Now if we go to explore we will get this :
 
- <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/04e3af2d-71be-4ec4-a2e7-a739caac876e" alt="image" width="600" height="380" />
+ <img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/04e3af2d-71be-4ec4-a2e7-a739caac876e" alt="image" width="700" height="340" />
 
 Here if we select **label** as jobs and value as **varlogs** we will get all the logs which are getting generated in the system . It is a central location where various logs are generated and stored. These logs encompass a wide range of system activities, events, and services that occur on the machine. Different applications, processes, and system components contribute to generating these logs, providing valuable information for system administrators, developers, and security personnel to monitor, troubleshoot, and maintain the system effectively. 
 
@@ -216,7 +216,7 @@ Here if we select **label** as jobs and value as **varlogs** we will get all the
 
 updated loki-config.yaml :
 
-  ```bash
+   ```bash
 server:
   http_listen_port: 9080
   grpc_listen_port: 0
@@ -240,6 +240,10 @@ scrape_configs:
     labels:
       job: grafana_logs
       __path__: /var/log/grafana/*log
-  ```
 
+   ```
+
+Now if we try to make a Dashboard to see ho many times "error" word came in the last 3 hours in grafana logs we can do it like this :
+
+<img src="https://github.com/yuabhishek14/Grafana-Log-Monitoring/assets/43784560/5cb0d7b3-7b57-498a-a980-b0bfd646b2d7" alt="image" width="700" height="340" />
 
