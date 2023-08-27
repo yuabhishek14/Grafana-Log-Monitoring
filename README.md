@@ -216,7 +216,7 @@ Here if we select **label** as jobs and value as **varlogs** we will get all the
 
 updated loki-config.yaml :
 
-```bash
+  ```bash
 server:
   http_listen_port: 9080
   grpc_listen_port: 0
@@ -240,6 +240,6 @@ scrape_configs:
     labels:
       job: grafana_logs
       __path__: /var/log/grafana/*log
-```
+  ```
 
 
